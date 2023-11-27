@@ -57,3 +57,21 @@ Voila pour les principaux probleme que j'ai rencontré.
 
 ### Voici un exemple de la gestion des userName
 ![Voici un exemple de la gestion des userName](./imageReadme/exemple_userName.png)
+
+## Les defis
+
+- Le premier defis a été de comprendre comment fonctionne Firebase et comment l'utiliser avec Flutter. J'ai donc du lire la doc et faire des test pour comprendre comment fonctionne Firebase et comment l'utiliser avec Flutter.
+
+- Le deuxieme defis a ete de faire la gestion des utilisateur. Apres quelque test plus ou moins concluant j'ai finalement reussi a faire la gestion des utilisateur avec Firebase.
+
+- Le troisieme defis a ete la gestion des instance et des table. J'ai lu les doc et des forum pour comprendre, quelque test, quelque echec et ca marche.
+
+- Le quatrieme defis a ete la gestion des erreur. Mon idee de faire une page commune a vraiment ete un defis pour trouver comment transmettre les erreur mais mais mon idee a ete concluante. 
+
+## La securité 
+
+La securité que j'ai mit en place est le cryptage des mot de passe pour eviter le vol des session.
+
+## Conclusion
+
+Ce projet ete tres interressant car on avait pas encore vu le systeme tres utile de la gestion d'utilisateur et les base de donnée avec flutter. Je suis plutot content de se que j'ai produit :D.
