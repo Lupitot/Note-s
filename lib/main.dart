@@ -84,24 +84,30 @@ class _MyHomePageState extends State<MyHomePage> {
                 child: Column(
                   children: [
                     const Padding(padding: EdgeInsets.all(30)),
-                    StreamBuilder<DocumentSnapshot>(
-                        stream: FirebaseFirestore.instance
+                    FutureBuilder<DocumentSnapshot>(
+                        future: FirebaseFirestore.instance
                             .collection('users')
                             .doc(user.uid)
-                            .snapshots(), //stream pour recuperer le nom de l'utilisateur
+                            .get(),
                         builder: (BuildContext context,
                             AsyncSnapshot<DocumentSnapshot> snapshot) {
-                          if (snapshot.hasError) {
-                            return Text("Something went wrong");
-                          }
-
                           if (snapshot.connectionState ==
                               ConnectionState.waiting) {
                             return Text("Loading");
                           }
+
+                          if (snapshot.hasError) {
+                            return Text("Something went wrong");
+                          }
+
+                          if (snapshot.data == null || !snapshot.data!.exists) {
+                            return Text("No data");
+                          }
+
                           Map<String, dynamic> data =
                               snapshot.data!.data() as Map<String, dynamic>;
-                          String userName = data['displayName'];
+                          String userName = data['displayName'] ?? 'User';
+
                           return InkWell(
                             child: Text(
                               'Hello $userName',

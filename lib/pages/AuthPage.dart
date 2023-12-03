@@ -34,7 +34,7 @@ class _AuthPageState extends State<AuthPage> {
         // Stocker le nom d'utilisateur dans Firestore
         await FirebaseFirestore.instance.collection('users').doc(user.uid).set({
           'displayName': displayName,
-        });
+        }, SetOptions(merge: true));
 
         Navigator.pushReplacementNamed(context, '/');
       } else {
