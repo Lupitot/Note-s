@@ -13,10 +13,12 @@ class _AuthPageState extends State<AuthPage> {
   final _emailController = TextEditingController();
   final _passwordController = TextEditingController();
 
-  void _register() async { //enregistrement de l'utilisateur
+  void _register() async {
+    //enregistrement de l'utilisateur
     try {
       UserCredential userCredential =
-          await FirebaseAuth.instance.createUserWithEmailAndPassword( //création de l'utilisateur dans firebase avec une instance de firebase
+          await FirebaseAuth.instance.createUserWithEmailAndPassword(
+        //création de l'utilisateur dans firebase avec une instance de firebase
         email: _emailController.text,
         password: _passwordController.text,
       );
@@ -34,7 +36,7 @@ class _AuthPageState extends State<AuthPage> {
           'displayName': displayName,
         });
 
-      Navigator.pushReplacementNamed(context, '/');    
+        Navigator.pushReplacementNamed(context, '/');
       } else {
         print('User creation failed');
       }
@@ -57,13 +59,13 @@ class _AuthPageState extends State<AuthPage> {
           context,
           MaterialPageRoute(builder: (context) => ErrorPage(numberError: 6)),
         );
-      } 
+      }
     }
   }
 
-          //mot de passe trop court == weak-password
-          //email non valide == invalid-email
-          //email deja utilisé   == email-already-in-use
+  //mot de passe trop court == weak-password
+  //email non valide == invalid-email
+  //email deja utilisé   == email-already-in-use
 
   @override
   Widget build(BuildContext context) {
@@ -97,7 +99,8 @@ class _AuthPageState extends State<AuthPage> {
             ],
           ),
         ),
-        floatingActionButton: FloatingActionButton( //bouton pour aller sur la page de login
+        floatingActionButton: FloatingActionButton(
+          //bouton pour aller sur la page de login
           onPressed: () {
             Navigator.push(
               context,

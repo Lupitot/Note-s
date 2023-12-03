@@ -12,6 +12,7 @@ Note's est une application de prise de notes qui permet aux utilisateurs de cré
     Suppression de notes.
 - Sessions Utilisateurs :
     Chaque utilisateur a sa propre session pour gérer ses notes.
+    Chaque utilisateur peut changer son nom d'utilisateur.
 - gestion des erreurs :
     lors d'une erreur l'utilisateur est rediriger vers une page d'erreur.
 
@@ -37,15 +38,16 @@ Note's est une application de prise de notes qui permet aux utilisateurs de cré
 - Probleme de gestion d'erreur
     Je voulais faire un systeme qui redirige l'utilisateur sur une seul page avec un text qui change en fonction de l'erreur mais je ne s'avait pas comment recuperer l'erreur et rediriger. Apres beaucoup de test j'ai trouver que je pouvais avoir les code erreur dans le terminal et donc les utiliser pour rediriger l'utilisateur.
 
+- Probleme des images dans les notes
+    Un des principaux probleme rencontré est les images, en effet je n'y suis pas arrivé. Le probleme rencontré est du a des permission. Je ne comprend toujours pas pourquoi ca ne marche pas. J'ai donné toute les permission necessaire dans "AndroidManifest.xml" mais ca ne marche toujours pas. J'ai essayé de les attribué directement sur l'application via les parametre mais le bouton le permettant ete grisé. Je ne pouvais donc pas les changer.J'ai essayé sur web, et ca ne marchais pas non plus. J'ai fais recherche, et je n'ai pas trouvé de solution a mon probleme. Apres plusieur a chercher une solution et a mon plus grand regret j'ai arrete le developpement de cette fonctionnalité ＞︿＜.  J'ai tout de meme laisser le code qui est sensé fonctionner et j'aimerais bien avoir un retour si possible. 
+
 Voila pour les principaux probleme que j'ai rencontré.
 
 ## Améliorations possibles
 
 - Ajouter une fonctionnalité de partage de note
 - Ajouter une fonctionnalité de modification de mot de passe
-- Ajouter une fonctionnalité de modification de nom d'utilisateur
 - Ajouter une fonctionnalité de suppression de compte
-- Ajouter une fonctionnalité d'ajout d'image dans les notes
 
 ## Images 
 
@@ -71,6 +73,8 @@ Voila pour les principaux probleme que j'ai rencontré.
 ## La securité 
 
 La securité que j'ai mit en place est le cryptage des mot de passe pour eviter le vol des session.
+Les id des instance de notes sont generer aleatoirement pour eviter de pouvoir les deviner et ecrire dans les notes des autres utilisateurs.
+Les utilisateur on des uid et pas des id se qui est plus securisé car aleatoire et plus long.
 
 ## Conclusion
 
